@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Little Wanderer — Sunshine Bay, Queenstown</title>
+  <meta name="description" content="A beautifully crafted tiny house perched above Lake Wakatipu in Sunshine Bay — five minutes from Queenstown, a world away from the crowds. Book your romantic escape.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=DM+Sans:wght@400&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon-stag-v2.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="#" class="nav__logo">
+      <img src="assets/favicon-stag-v2.png" alt="The Little Wanderer stag logo" class="nav__logo-icon">
+      The Little Wanderer
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <a href="#booking" class="nav__book">Book Now</a>
+    <button class="nav__hamburger" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__headline"><span class="accent-script">escape</span> to the edge of something beautiful</h1>
+      <p class="hero__subheadline">Sunshine Bay, Queenstown · Lake Wakatipu · Cecil &amp; Walter Peaks</p>
+    </div>
+    <div class="hero__scroll">
+      <span class="hero__scroll-text">scroll to discover</span>
+      <span class="hero__scroll-arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__header">
+      <p class="gallery__label">A Closer Look</p>
+      <h2 class="gallery__title">inside &amp; out</h2>
+      <p class="gallery__hint">Click any image to explore in full screen</p>
+    </div>
+    <div class="gallery__strip">
+      <div class="gallery__strip-track" id="galleryStrip">
+        <div class="gallery__thumb" data-index="0"><img src="assets/images/00-Sunset_Sky.png" alt="Sunset sky over Queenstown" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="1"><img src="assets/images/02_Lounge-Outdoor_Terrace.png" alt="Lounge and outdoor terrace" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="2"><img src="assets/images/03-Lake_View.png" alt="Lake Wakatipu views" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="3"><img src="assets/images/04-Private_Hot-Tub_Wood_Fired.png" alt="Private wood-fired hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="4"><img src="assets/images/05-Indoor-Outdoor_Flow.png" alt="Indoor-outdoor flow" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="5"><img src="assets/images/07-Cozy_Living-Dining.png" alt="Cosy living and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="6"><img src="assets/images/10-Bedroom_Loft.png" alt="Bedroom loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="7"><img src="assets/images/12-TV-Games-Chill_Loft.png" alt="TV, games and chill loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="8"><img src="assets/images/13-Bathroom.png" alt="Bathroom" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="9"><img src="assets/images/18-Lake-Mountain_Views_from_Hot-Tub.png" alt="Lake and mountain views from hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="10"><img src="assets/images/19-Private-Outdoor_Living.png" alt="Private outdoor living" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="11"><img src="assets/images/20_Kitchen-Dinning.png" alt="Kitchen and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+        <div class="gallery__thumb" data-index="12"><img src="assets/images/21_Parking.png" alt="Private parking" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close gallery">&#10005;</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Previous image">&#8592;</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next image">&#8594;</button>
+    <div class="lightbox__stage">
+      <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    </div>
+    <div class="lightbox__counter" id="lightboxCounter">1 / 13</div>
+  </div>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__inner">
+      <div class="about__image">
+        <img src="assets/images/02_Lounge-Outdoor_Terrace.png" alt="The Little Wanderer lounge and outdoor terrace">
+      </div>
+      <div class="about__text">
+        <p class="about__label">The Story</p>
+        <h2 class="about__title">a tiny house built to make you slow down</h2>
+        <div class="about__body">
+          <p>The Little Wanderer is a beautifully crafted tiny house perched above the shores of Lake Wakatipu in the quiet neighbourhood of Sunshine Bay — just five minutes from Queenstown, yet a world away from the crowds. Designed for couples and small groups who want to <span class="accent-script accent-script--warm">unwind</span> without missing out, it's a place where thoughtful design meets genuine wildness.</p>
+          <p>Wake up to Cecil Peak rising from the water, soak under the stars in your private wood-fired hot tub, and spend your evenings around the wood burner with a glass of Central Otago red. Two bedrooms, a fully equipped kitchen, open-plan living, and your own private outdoor terrace. Everything you need. Nothing you don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOST STORY -->
+  <section class="hosts" id="hosts">
+    <div class="hosts__inner">
+      <div class="hosts__photo">
+        <div class="hosts__photo-placeholder">
+          <span class="hosts__photo-text">Photo coming soon</span>
+        </div>
+      </div>
+      <div class="hosts__text">
+        <p class="hosts__label">Your Hosts</p>
+        <h3 class="hosts__name">Stepan &amp; Anna</h3>
+        <p class="hosts__body">Every detail of The Little Wanderer was individually designed and crafted by Stepan and Anna. From the wood-fired hot tub to the star-ceiling loft, their intention was simple — to create a space where guests feel genuinely at home, somewhere beautiful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="amenities" id="amenities">
+    <div class="amenities__header">
+      <p class="amenities__label">The Space</p>
+      <h2 class="amenities__title">your stay includes</h2>
+    </div>
+    <div class="amenities__grid">
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Wood-fired Hot Tub</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Lake &amp; Mountain Views</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Fully Equipped Kitchen</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Nespresso Machine</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Fast WiFi</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Smart TV &amp; Games</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Wood Burner</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Rainfall Shower</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Super King Bed</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Self Check-in</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Private Parking</span>
+      </div>
+      <div class="amenity">
+        <span class="amenity__icon">+</span>
+        <span class="amenity__label">Outdoor Lockable Storage</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="location">
+    <div class="location__bg"></div>
+    <div class="location__overlay"></div>
+    <div class="location__content">
+      <p class="location__label">Queenstown</p>
+      <h2 class="location__headline">five minutes from town.<br>a world away.</h2>
+      <p class="location__body">Sunshine Bay sits quietly on the western shore of Lake Wakatipu — close enough to walk to town along the lakeside trail, far enough to feel like you've truly escaped. Adventure, restaurants, and the Remarkables are all at your doorstep.</p>
+    </div>
+  </section>
+
+  <!-- RATES -->
+  <section class="rates" id="rates">
+    <div class="rates__inner">
+      <p class="rates__label">Pricing</p>
+      <h2 class="rates__title">rates &amp; availability</h2>
+      <div class="rates__grid">
+        <div class="rates__cell">
+          <p class="rates__cell-label">NIGHTLY FROM</p>
+          <p class="rates__cell-value">$548</p>
+          <p class="rates__cell-sub">NZD · 2-night minimum</p>
+        </div>
+        <div class="rates__cell">
+          <p class="rates__cell-label">CHECK-IN</p>
+          <p class="rates__cell-value">3:00 pm</p>
+          <p class="rates__cell-sub">Self check-in via lockbox</p>
+        </div>
+        <div class="rates__cell">
+          <p class="rates__cell-label">CHECK-OUT</p>
+          <p class="rates__cell-value">10:00 am</p>
+          <p class="rates__cell-sub">Late check-out on request</p>
+        </div>
+      </div>
+      <div class="rates__rules">
+        <span class="rates__rule">No smoking</span>
+        <span class="rates__rule">No parties or events</span>
+        <span class="rates__rule">No pets</span>
+        <span class="rates__rule">Max 3 guests</span>
+        <span class="rates__rule">No babies or toddlers</span>
+      </div>
+      <a href="#booking" class="rates__cta">Check Availability</a>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="booking" id="booking">
+    <div class="booking__bg"></div>
+    <div class="booking__overlay"></div>
+    <div class="booking__content">
+      <p class="booking__label">Reserve your stay</p>
+      <h2 class="booking__headline">have a date in mind?</h2>
+      <p class="booking__sub">Check availability and book your escape below.</p>
+      <a href="https://www.airbnb.com" class="booking__cta" target="_blank" rel="noopener">Book Now</a>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews__header">
+      <p class="reviews__label">Guest Stories</p>
+      <h2 class="reviews__title">what people are saying</h2>
+    </div>
+    <div class="reviews__trust">4.9 stars &nbsp;·&nbsp; 105 reviews &nbsp;·&nbsp; Guest Favourite on Airbnb</div>
+    <div class="reviews__carousel">
+      <div class="reviews__track-wrap">
+        <div class="reviews__track" id="reviewsTrack">
+          <div class="review">
+            <p class="review__stars">★★★★★</p>
+            <p class="review__quote">"The scenery is unreal, the spot is just far enough out of town that you feel like you're not in a town, but close enough to get into town for anything. The hot tub was king. Can't express how amazing it is to sit in that soothing hot water gazing out over the lake and the mountains. Unreal."</p>
+            <p class="review__byline">Josh &nbsp;·&nbsp; November 2024</p>
+          </div>
+          <div class="review">
+            <p class="review__stars">★★★★★</p>
+            <p class="review__quote">"Honestly don't think the photos did the view justice. We went to an Onsen in Queenstown, thought the view from the cabin was better. Have recommended to three or four couples, one of the nicest, most romantic cabins I've ever stayed in."</p>
+            <p class="review__byline">Samuel &nbsp;·&nbsp; July 2025</p>
+          </div>
+          <div class="review">
+            <p class="review__stars">★★★★★</p>
+            <p class="review__quote">"My husband and I stayed for the last few nights of our honeymoon. What a romantic end to a beautiful trip. The view is even better than the pictures. The hot tub was the perfect end to our night. What a wonderful little gem we found."</p>
+            <p class="review__byline">Courtney &nbsp;·&nbsp; January 2025</p>
+          </div>
+          <div class="review">
+            <p class="review__stars">★★★★★</p>
+            <p class="review__quote">"The location was so close to the city that we could get anywhere within 5 minutes but far enough away that the atmosphere was peaceful and relaxing. Our seven night stay was exactly what we needed to wind down from our busy lives. Highly recommend to anyone looking for a peaceful stay with stunning views."</p>
+            <p class="review__byline">Krystal &nbsp;·&nbsp; August 2025</p>
+          </div>
+          <div class="review">
+            <p class="review__stars">★★★★★</p>
+            <p class="review__quote">"Go into the wood stoked hot tub before sunset. Enjoy the amazing mountain view, hear the stream below you and when night falls and you turn off the lights a truly sky full of stars appears. It is truly magnificent."</p>
+            <p class="review__byline">Geoffrey &nbsp;·&nbsp; December 2022</p>
+          </div>
+        </div>
+      </div>
+      <div class="reviews__nav">
+        <button class="reviews__arrow" id="revPrev" aria-label="Previous review">&#8592;</button>
+        <div class="reviews__dots" id="reviewsDots"></div>
+        <button class="reviews__arrow" id="revNext" aria-label="Next review">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#" class="footer__logo">The Little Wanderer</a>
+      <ul class="footer__links">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#rates">Rates</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+      <p class="footer__copy">&copy; 2025 The Little Wanderer · Sunshine Bay, Queenstown, New Zealand</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
