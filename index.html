@@ -11,6 +11,7 @@
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon-stag-v2.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,7 +30,7 @@
       <li><a href="#rates">Rates</a></li>
       <li><a href="#reviews">Reviews</a></li>
     </ul>
-    <a href="#booking" class="nav__book">Book Now</a>
+    <a href="#rates" class="nav__book">Book Now</a>
     <button class="nav__hamburger" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -55,21 +56,36 @@
       <h2 class="gallery__title">inside &amp; out</h2>
       <p class="gallery__hint">Click any image to explore in full screen</p>
     </div>
-    <div class="gallery__strip">
-      <div class="gallery__strip-track" id="galleryStrip">
-        <div class="gallery__thumb" data-index="0"><img src="assets/images/00-Sunset_Sky.png" alt="Sunset sky over Queenstown" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="1"><img src="assets/images/02_Lounge-Outdoor_Terrace.png" alt="Lounge and outdoor terrace" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="2"><img src="assets/images/03-Lake_View.png" alt="Lake Wakatipu views" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="3"><img src="assets/images/04-Private_Hot-Tub_Wood_Fired.png" alt="Private wood-fired hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="4"><img src="assets/images/05-Indoor-Outdoor_Flow.png" alt="Indoor-outdoor flow" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="5"><img src="assets/images/07-Cozy_Living-Dining.png" alt="Cosy living and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="6"><img src="assets/images/10-Bedroom_Loft.png" alt="Bedroom loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="7"><img src="assets/images/12-TV-Games-Chill_Loft.png" alt="TV, games and chill loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="8"><img src="assets/images/13-Bathroom.png" alt="Bathroom" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="9"><img src="assets/images/18-Lake-Mountain_Views_from_Hot-Tub.png" alt="Lake and mountain views from hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="10"><img src="assets/images/19-Private-Outdoor_Living.png" alt="Private outdoor living" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="11"><img src="assets/images/20_Kitchen-Dinning.png" alt="Kitchen and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
-        <div class="gallery__thumb" data-index="12"><img src="assets/images/21_Parking.png" alt="Private parking" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></div>
+    <div class="gallery__strip glide" id="galleryGlide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="gallery__strip-track glide__slides" id="galleryStrip">
+          <li class="gallery__thumb glide__slide" data-index="0"><img src="assets/images/00-Sunset_Sky.png" alt="Sunset sky over Queenstown" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="1"><img src="assets/images/02_Lounge-Outdoor_Terrace.png" alt="Lounge and outdoor terrace" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="2"><img src="assets/images/03-Lake_View.png" alt="Lake Wakatipu views" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="3"><img src="assets/images/04-Private_Hot-Tub_Wood_Fired.png" alt="Private wood-fired hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="4"><img src="assets/images/05-Indoor-Outdoor_Flow.png" alt="Indoor-outdoor flow" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="5"><img src="assets/images/07-Cozy_Living-Dining.png" alt="Cosy living and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="6"><img src="assets/images/10-Bedroom_Loft.png" alt="Bedroom loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="7"><img src="assets/images/12-TV-Games-Chill_Loft.png" alt="TV, games and chill loft" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="8"><img src="assets/images/13-Bathroom.png" alt="Bathroom" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="9"><img src="assets/images/18-Lake-Mountain_Views_from_Hot-Tub.png" alt="Lake and mountain views from hot tub" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="10"><img src="assets/images/19-Private-Outdoor_Living.png" alt="Private outdoor living" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="11"><img src="assets/images/20_Kitchen-Dinning.png" alt="Kitchen and dining" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+          <li class="gallery__thumb glide__slide" data-index="12"><img src="assets/images/21_Parking.png" alt="Private parking" loading="lazy"><div class="gallery__thumb-overlay"><span>&#8599;</span></div></li>
+        </ul>
+      </div>
+      <div class="gallery__nav glide__arrows" data-glide-el="controls">
+        <button class="gallery__arrow glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Previous image">&#8592;</button>
+        <button class="gallery__arrow glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Next image">&#8594;</button>
+      </div>
+    </div>
+    <div class="gallery-disclaimer">
+      <button class="disclaimer-toggle" aria-expanded="false">
+        <span>About our photography</span>
+        <span class="disclaimer-icon">+</span>
+      </button>
+      <div class="disclaimer-content" hidden>
+        <p>Our gallery has been professionally enhanced to better reflect the warmth, light, and atmosphere of The Little Wanderer. No amenities or key property features have been added or misrepresented. The property, views, layout, and all features shown are an accurate reflection of the real guest experience.</p>
       </div>
     </div>
   </section>
@@ -106,14 +122,38 @@
   <section class="hosts" id="hosts">
     <div class="hosts__inner">
       <div class="hosts__photo">
-        <div class="hosts__photo-placeholder">
-          <span class="hosts__photo-text">Photo coming soon</span>
-        </div>
+        <img src="assets/images/Step-Anna.png" alt="Stepan and Anna, hosts of The Little Wanderer">
       </div>
       <div class="hosts__text">
         <p class="hosts__label">Your Hosts</p>
         <h3 class="hosts__name">Stepan &amp; Anna</h3>
         <p class="hosts__body">Every detail of The Little Wanderer was individually designed and crafted by Stepan and Anna. From the wood-fired hot tub to the star-ceiling loft, their intention was simple — to create a space where guests feel genuinely at home, somewhere beautiful.</p>
+        <p class="hosts__trust">Superhosts on Airbnb</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-bar-container">
+      <div class="trust-item">
+        <span class="trust-number">4.91</span>
+        <span class="trust-label">Average Rating</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-number">106</span>
+        <span class="trust-label">Guest Reviews</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-number">Guest Favourite</span>
+        <span class="trust-label">Airbnb Recognition</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <span class="trust-number">Superhost</span>
+        <span class="trust-label">9 Years Hosting</span>
       </div>
     </div>
   </section>
@@ -126,51 +166,51 @@
     </div>
     <div class="amenities__grid">
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2c0 1.5 1.5 1.5 1.5 3S8 7 8 8.5"/><path d="M12 2c0 1.5 1.5 1.5 1.5 3S12 7 12 8.5"/><path d="M16 2c0 1.5 1.5 1.5 1.5 3S16 7 16 8.5"/><path d="M5 13 a7 7 0 0 0 14 0"/><line x1="5" y1="13" x2="19" y2="13"/></svg>
         <span class="amenity__label">Wood-fired Hot Tub</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
         <span class="amenity__label">Lake &amp; Mountain Views</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
         <span class="amenity__label">Fully Equipped Kitchen</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
         <span class="amenity__label">Nespresso Machine</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" x2="12.01" y1="20" y2="20"/></svg>
         <span class="amenity__label">Fast WiFi</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="15" x="2" y="3" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
         <span class="amenity__label">Smart TV &amp; Games</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
         <span class="amenity__label">Wood Burner</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h2a2 2 0 0 1 2 2v1h8V6a2 2 0 0 1 2-2h2"/><path d="M7 7v1a5 5 0 0 0 10 0V7"/><line x1="6" x2="6" y1="15" y2="21"/><line x1="10" x2="10" y1="15" y2="21"/><line x1="14" x2="14" y1="15" y2="21"/><line x1="18" x2="18" y1="15" y2="21"/></svg>
         <span class="amenity__label">Rainfall Shower</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
         <span class="amenity__label">Super King Bed</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
         <span class="amenity__label">Self Check-in</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
         <span class="amenity__label">Private Parking</span>
       </div>
       <div class="amenity">
-        <span class="amenity__icon">+</span>
+        <svg class="amenity__icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C4894A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         <span class="amenity__label">Outdoor Lockable Storage</span>
       </div>
     </div>
@@ -216,7 +256,7 @@
         <span class="rates__rule">Max 3 guests</span>
         <span class="rates__rule">No babies or toddlers</span>
       </div>
-      <a href="#booking" class="rates__cta">Check Availability</a>
+      <a href="https://www.booking.com/hotel/nz/the-little-wanderer.en-gb.html" target="_blank" rel="noopener noreferrer" class="rates__cta">Check Availability</a>
     </div>
   </section>
 
@@ -225,10 +265,11 @@
     <div class="booking__bg"></div>
     <div class="booking__overlay"></div>
     <div class="booking__content">
+      <span class="booking__divider"></span>
       <p class="booking__label">Reserve your stay</p>
       <h2 class="booking__headline">have a date in mind?</h2>
       <p class="booking__sub">Check availability and book your escape below.</p>
-      <a href="https://www.airbnb.com" class="booking__cta" target="_blank" rel="noopener">Book Now</a>
+      <a href="https://www.booking.com/hotel/nz/the-little-wanderer.en-gb.html" class="booking__cta" target="_blank" rel="noopener noreferrer">Check Availability</a>
     </div>
   </section>
 
@@ -238,41 +279,53 @@
       <p class="reviews__label">Guest Stories</p>
       <h2 class="reviews__title">what people are saying</h2>
     </div>
-    <div class="reviews__trust">4.9 stars &nbsp;·&nbsp; 105 reviews &nbsp;·&nbsp; Guest Favourite on Airbnb</div>
-    <div class="reviews__carousel">
-      <div class="reviews__track-wrap">
-        <div class="reviews__track" id="reviewsTrack">
-          <div class="review">
-            <p class="review__stars">★★★★★</p>
-            <p class="review__quote">"The scenery is unreal, the spot is just far enough out of town that you feel like you're not in a town, but close enough to get into town for anything. The hot tub was king. Can't express how amazing it is to sit in that soothing hot water gazing out over the lake and the mountains. Unreal."</p>
-            <p class="review__byline">Josh &nbsp;·&nbsp; November 2024</p>
-          </div>
-          <div class="review">
-            <p class="review__stars">★★★★★</p>
-            <p class="review__quote">"Honestly don't think the photos did the view justice. We went to an Onsen in Queenstown, thought the view from the cabin was better. Have recommended to three or four couples, one of the nicest, most romantic cabins I've ever stayed in."</p>
-            <p class="review__byline">Samuel &nbsp;·&nbsp; July 2025</p>
-          </div>
-          <div class="review">
-            <p class="review__stars">★★★★★</p>
-            <p class="review__quote">"My husband and I stayed for the last few nights of our honeymoon. What a romantic end to a beautiful trip. The view is even better than the pictures. The hot tub was the perfect end to our night. What a wonderful little gem we found."</p>
-            <p class="review__byline">Courtney &nbsp;·&nbsp; January 2025</p>
-          </div>
-          <div class="review">
-            <p class="review__stars">★★★★★</p>
-            <p class="review__quote">"The location was so close to the city that we could get anywhere within 5 minutes but far enough away that the atmosphere was peaceful and relaxing. Our seven night stay was exactly what we needed to wind down from our busy lives. Highly recommend to anyone looking for a peaceful stay with stunning views."</p>
-            <p class="review__byline">Krystal &nbsp;·&nbsp; August 2025</p>
-          </div>
-          <div class="review">
-            <p class="review__stars">★★★★★</p>
-            <p class="review__quote">"Go into the wood stoked hot tub before sunset. Enjoy the amazing mountain view, hear the stream below you and when night falls and you turn off the lights a truly sky full of stars appears. It is truly magnificent."</p>
-            <p class="review__byline">Geoffrey &nbsp;·&nbsp; December 2022</p>
-          </div>
-        </div>
+    <div class="reviews__trust">4.91 stars &nbsp;·&nbsp; 106 reviews &nbsp;·&nbsp; Guest Favourite on Airbnb</div>
+    <div class="reviews__carousel glide" id="reviewsGlide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <div class="reviews__grid">
+              <div class="review">
+                <p class="review__stars">★★★★★</p>
+                <p class="review__quote">"The scenery is unreal, the spot is just far enough out of town that you feel like you're not in a town, but close enough to get into town for anything. The hot tub was king. Can't express how amazing it is to sit in that soothing hot water gazing out over the lake and the mountains. Unreal."</p>
+                <p class="review__byline">Josh &nbsp;·&nbsp; November 2024</p>
+              </div>
+              <div class="review">
+                <p class="review__stars">★★★★★</p>
+                <p class="review__quote">"Honestly don't think the photos did the view justice. We went to an Onsen in Queenstown, thought the view from the cabin was better. Have recommended to three or four couples, one of the nicest, most romantic cabins I've ever stayed in."</p>
+                <p class="review__byline">Samuel &nbsp;·&nbsp; July 2025</p>
+              </div>
+              <div class="review">
+                <p class="review__stars">★★★★★</p>
+                <p class="review__quote">"My husband and I stayed for the last few nights of our honeymoon. What a romantic end to a beautiful trip. The view is even better than the pictures. The hot tub was the perfect end to our night. What a wonderful little gem we found."</p>
+                <p class="review__byline">Courtney &nbsp;·&nbsp; January 2025</p>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="reviews__grid">
+              <div class="review">
+                <p class="review__stars">★★★★★</p>
+                <p class="review__quote">"The location was so close to the city that we could get anywhere within 5 minutes but far enough away that the atmosphere was peaceful and relaxing. Our seven night stay was exactly what we needed to wind down from our busy lives. Highly recommend to anyone looking for a peaceful stay with stunning views."</p>
+                <p class="review__byline">Krystal &nbsp;·&nbsp; August 2025</p>
+              </div>
+              <div class="review">
+                <p class="review__stars">★★★★★</p>
+                <p class="review__quote">"Go into the wood stoked hot tub before sunset. Enjoy the amazing mountain view, hear the stream below you and when night falls and you turn off the lights a truly sky full of stars appears. It is truly magnificent."</p>
+                <p class="review__byline">Geoffrey &nbsp;·&nbsp; December 2022</p>
+              </div>
+              <div class="review review--empty" aria-hidden="true"></div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="reviews__nav">
-        <button class="reviews__arrow" id="revPrev" aria-label="Previous review">&#8592;</button>
-        <div class="reviews__dots" id="reviewsDots"></div>
-        <button class="reviews__arrow" id="revNext" aria-label="Next review">&#8594;</button>
+      <div class="reviews__nav glide__arrows" data-glide-el="controls">
+        <button class="reviews__arrow glide__arrow glide__arrow--left" data-glide-dir="<" aria-label="Previous reviews">&#8592;</button>
+        <div class="reviews__dots glide__bullets" data-glide-el="controls[nav]">
+          <button class="reviews__dot glide__bullet" data-glide-dir="=0" aria-label="Go to slide 1"></button>
+          <button class="reviews__dot glide__bullet" data-glide-dir="=1" aria-label="Go to slide 2"></button>
+        </div>
+        <button class="reviews__arrow glide__arrow glide__arrow--right" data-glide-dir=">" aria-label="Next reviews">&#8594;</button>
       </div>
     </div>
   </section>
@@ -280,7 +333,10 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__inner">
-      <a href="#" class="footer__logo">The Little Wanderer</a>
+      <a href="#" class="footer__logo">
+        <img src="assets/favicon-stag-v2.png" alt="The Little Wanderer stag logo" class="footer-stag-logo">
+        The Little Wanderer
+      </a>
       <ul class="footer__links">
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#about">About</a></li>
@@ -288,12 +344,13 @@
         <li><a href="#location">Location</a></li>
         <li><a href="#rates">Rates</a></li>
         <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#booking">Book Now</a></li>
+        <li><a href="https://www.booking.com/hotel/nz/the-little-wanderer.en-gb.html" target="_blank" rel="noopener noreferrer">Book Now</a></li>
       </ul>
       <p class="footer__copy">&copy; 2025 The Little Wanderer · Sunshine Bay, Queenstown, New Zealand</p>
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
   <script src="main.js"></script>
 </body>
 </html>

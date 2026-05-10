@@ -1,10 +1,26 @@
-﻿/* ===== NAV HAMBURGER ===== */
+/* ===== NAV HAMBURGER ===== */
 
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => navLinks.classList.toggle('is-open'));
 navLinks.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('is-open'));
+});
+
+
+/* ===== SMOOTH SCROLL WITH NAV OFFSET ===== */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    const navHeight = document.querySelector('nav').offsetHeight || 80;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
 });
 
 
@@ -20,26 +36,20 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
-/* ===== GALLERY — DRAG SCROLL STRIP ===== */
+/* ===== GALLERY CAROUSEL ===== */
 
-const strip = document.getElementById('galleryStrip');
-let isDown = false, startX, scrollLeft;
-
-strip.addEventListener('mousedown', e => {
-  isDown = true;
-  strip.parentElement.style.cursor = 'grabbing';
-  startX = e.pageX - strip.offsetLeft;
-  scrollLeft = strip.parentElement.scrollLeft;
-});
-strip.addEventListener('mouseleave', () => { isDown = false; strip.parentElement.style.cursor = 'grab'; });
-strip.addEventListener('mouseup', () => { isDown = false; strip.parentElement.style.cursor = 'grab'; });
-strip.addEventListener('mousemove', e => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - strip.offsetLeft;
-  const walk = (x - startX) * 1.4;
-  strip.parentElement.scrollLeft = scrollLeft - walk;
-});
+if (document.getElementById('galleryGlide')) {
+  new Glide('#galleryGlide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    gap: 6,
+    breakpoints: {
+      1200: { perView: 2 },
+      768: { perView: 1 }
+    }
+  }).mount();
+}
 
 
 /* ===== LIGHTBOX ===== */
@@ -93,14 +103,14 @@ function lightboxNav(dir) {
   }, 180);
 }
 
-// Open from thumbnails — only if not dragging
-let didDrag = false;
-strip.addEventListener('mousedown', () => { didDrag = false; });
-strip.addEventListener('mousemove', () => { didDrag = true; });
-
+// Open from thumbnails
 document.querySelectorAll('.gallery__thumb').forEach(thumb => {
-  thumb.addEventListener('click', () => {
-    if (didDrag) return;
+  thumb.addEventListener('click', (e) => {
+    // Glide handles drag prevention, but if needed we can check parent classes
+    if (e.target.closest('.glide__slide--clone')) {
+      // Cloned slides might not trigger correctly if we only rely on dataset index
+      // but Glide clones the dataset attributes too, so it's usually fine
+    }
     openLightbox(parseInt(thumb.dataset.index));
   });
 });
@@ -129,71 +139,26 @@ lightbox.addEventListener('touchend', e => {
 
 /* ===== REVIEWS CAROUSEL ===== */
 
-const revTrack = document.getElementById('reviewsTrack');
-const revDots = document.getElementById('reviewsDots');
-const reviewCards = revTrack.querySelectorAll('.review');
-let revCurrent = 0;
-let revTimer;
-let cardsPerSlide = window.innerWidth > 768 ? 3 : 1;
-let totalSlides = Math.ceil(reviewCards.length / cardsPerSlide);
-
-function revBuildDots() {
-  revDots.innerHTML = '';
-  for (let i = 0; i < totalSlides; i++) {
-    const d = document.createElement('button');
-    d.className = 'reviews__dot' + (i === 0 ? ' is-active' : '');
-    d.setAttribute('aria-label', 'Go to review group ' + (i + 1));
-    d.addEventListener('click', () => { revStopAuto(); revGoTo(i); revStartAuto(); });
-    revDots.appendChild(d);
-  }
+if (document.getElementById('reviewsGlide')) {
+  new Glide('#reviewsGlide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 1,
+    gap: 0,
+    autoplay: 6000,
+    hoverpause: true
+  }).mount();
 }
 
-function revUpdateDots() {
-  revDots.querySelectorAll('.reviews__dot').forEach((d, i) => {
-    d.classList.toggle('is-active', i === revCurrent);
+
+/* ===== GALLERY DISCLAIMER ACCORDION ===== */
+
+const disclaimerBtn = document.querySelector('.disclaimer-toggle');
+if (disclaimerBtn) {
+  disclaimerBtn.addEventListener('click', () => {
+    const expanded = disclaimerBtn.getAttribute('aria-expanded') === 'true';
+    disclaimerBtn.setAttribute('aria-expanded', !expanded);
+    const content = disclaimerBtn.nextElementSibling;
+    content.hidden = expanded;
   });
 }
-
-function revGoTo(index) {
-  revCurrent = (index + totalSlides) % totalSlides;
-  const cardWidth = reviewCards[0].offsetWidth;
-  const gap = window.innerWidth > 768 ? 32 : 0; // 2rem gap
-  const moveBy = cardsPerSlide * (cardWidth + gap);
-  revTrack.style.transform = 'translateX(-' + revCurrent * moveBy + 'px)';
-  revUpdateDots();
-}
-
-function revStartAuto() { revTimer = setInterval(() => revGoTo(revCurrent + 1), 6000); }
-function revStopAuto()  { clearInterval(revTimer); }
-
-document.getElementById('revPrev').addEventListener('click', () => { revStopAuto(); revGoTo(revCurrent - 1); revStartAuto(); });
-document.getElementById('revNext').addEventListener('click', () => { revStopAuto(); revGoTo(revCurrent + 1); revStartAuto(); });
-
-revTrack.closest('.reviews__track-wrap').addEventListener('mouseenter', revStopAuto);
-revTrack.closest('.reviews__track-wrap').addEventListener('mouseleave', revStartAuto);
-
-let revTouchX = 0;
-revTrack.addEventListener('touchstart', e => { revTouchX = e.touches[0].clientX; }, { passive: true });
-revTrack.addEventListener('touchend', e => {
-  const diff = revTouchX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 40) {
-    revStopAuto();
-    revGoTo(revCurrent + (diff > 0 ? 1 : -1));
-    revStartAuto();
-  }
-});
-
-window.addEventListener('resize', () => {
-  const newCardsPerSlide = window.innerWidth > 768 ? 3 : 1;
-  if (newCardsPerSlide !== cardsPerSlide) {
-    cardsPerSlide = newCardsPerSlide;
-    totalSlides = Math.ceil(reviewCards.length / cardsPerSlide);
-    revCurrent = 0;
-    revBuildDots();
-  }
-  revGoTo(revCurrent);
-});
-
-// Init
-revBuildDots();
-revStartAuto();
