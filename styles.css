@@ -430,11 +430,11 @@ section[id] {
 }
 
 .gallery__arrow {
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   border: none;
   display: flex;
   align-items: center;
@@ -460,9 +460,15 @@ section[id] {
   user-select: none;
 }
 
+@media (max-width: 1024px) {
+  .gallery {
+    min-height: auto;
+  }
+}
+
 @media (max-width: 600px) {
   .gallery {
-    padding: 60px 0 40px;
+    padding: 60px 0 30px;
   }
 }
 
@@ -570,8 +576,8 @@ section[id] {
   top: 1.5rem;
   right: 1.5rem;
   z-index: 2;
-  width: 48px;
-  height: 48px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
@@ -593,8 +599,8 @@ section[id] {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  width: 48px;
-  height: 48px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
@@ -1350,7 +1356,7 @@ section[id] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 6px;
   text-align: center;
 }
 
@@ -1362,17 +1368,35 @@ section[id] {
   color: var(--cream);
   text-decoration: none;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto;
 }
 
 .footer-stag-logo {
-  width: 150px;
-  height: 150px;
+  width: 155px;
+  height: auto;
   object-fit: contain;
   display: block;
-  margin: 0 auto 10px auto;
-  padding-top: 20px;
+  margin: 0;
+  padding-top: 10px;
   opacity: 0.85;
   filter: brightness(0) invert(1);
+}
+
+.footer__email {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+
+.footer__email:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .footer__links {
@@ -1381,6 +1405,7 @@ section[id] {
   justify-content: center;
   gap: 0.5rem 2rem;
   list-style: none;
+  margin-top: 18px;
 }
 
 .footer__links a {
@@ -1628,13 +1653,6 @@ section[id] {
 }
 
 
-@media (max-width: 600px) {
-  .gallery {
-    padding: 60px 0 40px;
-  }
-}
-
-
 /* ===== MOBILE & TABLET POLISH ===== */
 
 @media (max-width: 1024px) {
@@ -1714,8 +1732,8 @@ section[id] {
   }
 
   .gallery__arrow {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.68rem;
+    height: 1.68rem;
     font-size: 1rem;
   }
 
@@ -1751,7 +1769,7 @@ section[id] {
   }
 
   .review__quote {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.65;
   }
 
@@ -1769,7 +1787,7 @@ section[id] {
   }
 
   .footer__inner {
-    gap: 1.5rem;
+    gap: 6px;
   }
 
   .footer__links {
@@ -1805,13 +1823,11 @@ section[id] {
   }
 
   .gallery__arrow {
-    width: 2rem;
-    height: 2rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .gallery__nav {
     padding: 0 0.35rem;
   }
 }
-
-
