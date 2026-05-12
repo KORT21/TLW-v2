@@ -183,24 +183,16 @@ section[id] {
 }
 
 @media (max-width: 1024px) {
-  .nav__links {
-    gap: 1.5rem;
-  }
-  .nav__links a {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  .nav__logo-text {
-    display: none;
-  }
-  .nav__book {
-    padding: 10px 18px;
-  }
-}
-
-@media (max-width: 768px) {
   .nav {
     padding: 0 1.25rem;
+  }
+
+  .nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .nav__links {
@@ -231,6 +223,14 @@ section[id] {
     padding: 1rem;
     font-size: 13px;
     letter-spacing: 2px;
+  }
+
+  .nav__logo-text {
+    display: none;
+  }
+
+  .nav__book {
+    padding: 10px 18px;
   }
 
   .nav__hamburger {
