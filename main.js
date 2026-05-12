@@ -39,7 +39,7 @@ window.addEventListener('scroll', () => {
 /* ===== GALLERY CAROUSEL ===== */
 
 if (document.getElementById('galleryGlide')) {
-  new Glide('#galleryGlide', {
+  const galleryGlide = new Glide('#galleryGlide', {
     type: 'carousel',
     startAt: 0,
     perView: 3,
@@ -48,7 +48,24 @@ if (document.getElementById('galleryGlide')) {
       1200: { perView: 2 },
       768: { perView: 1 }
     }
-  }).mount();
+  });
+  galleryGlide.mount();
+
+  const galleryEl = document.getElementById('galleryGlide');
+  let wheelAccum = 0;
+  let wheelLock = false;
+  galleryEl.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault();
+    if (wheelLock) return;
+    wheelAccum += e.deltaX;
+    if (Math.abs(wheelAccum) > 30) {
+      galleryGlide.go(wheelAccum > 0 ? '>' : '<');
+      wheelAccum = 0;
+      wheelLock = true;
+      setTimeout(() => { wheelLock = false; }, 300);
+    }
+  }, { passive: false });
 }
 
 
