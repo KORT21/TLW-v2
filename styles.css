@@ -401,7 +401,7 @@ section[id] {
 .gallery__thumb {
   position: relative;
   aspect-ratio: 16 / 9;
-  width: 33.333vw;
+  width: 33.333%;
   overflow: hidden;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -432,7 +432,7 @@ section[id] {
 .gallery__arrow {
   width: 48px;
   height: 48px;
-  border-radius: 8px;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
   border: none;
@@ -463,10 +463,6 @@ section[id] {
 @media (max-width: 600px) {
   .gallery {
     padding: 60px 0 40px;
-  }
-
-  .gallery__thumb {
-    height: 200px;
   }
 }
 

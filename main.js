@@ -43,11 +43,7 @@ if (document.getElementById('galleryGlide')) {
     type: 'carousel',
     startAt: 0,
     perView: 3,
-    gap: 6,
-    breakpoints: {
-      1200: { perView: 2 },
-      768: { perView: 1 }
-    }
+    gap: 6
   });
   galleryGlide.mount();
 
