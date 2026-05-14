@@ -175,3 +175,16 @@ if (disclaimerBtn) {
     content.hidden = expanded;
   });
 }
+
+
+/* ===== AMENITIES TOGGLE ===== */
+
+const amenitiesToggle = document.getElementById('amenitiesToggle');
+if (amenitiesToggle) {
+  const amenitiesSection = document.getElementById('amenities');
+  amenitiesToggle.addEventListener('click', () => {
+    const expanded = amenitiesSection.classList.toggle('is-expanded');
+    amenitiesToggle.setAttribute('aria-expanded', expanded);
+    amenitiesToggle.textContent = expanded ? 'Read less' : 'See all amenities';
+  });
+}

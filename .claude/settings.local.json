@@ -4,7 +4,13 @@
       "Bash(Select-Object -First 30)",
       "Bash(Get-Content *)",
       "Bash(Select-String -Pattern 'footer' -Path 'C:\\\\Users\\\\kaika\\\\OneDrive\\\\Plocha\\\\TH - TLW\\\\The Little Wanderer\\\\styles.css')",
-      "Bash(Select-Object LineNumber,Line)"
+      "Bash(Select-Object LineNumber,Line)",
+      "Bash(python *)",
+      "Bash(curl -s http://localhost:8765/styles.css)",
+      "Bash(git push *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(Select-String -Pattern \"b4005b30|78b7687c\")"
     ]
   }
 }
